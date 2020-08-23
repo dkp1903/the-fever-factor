@@ -20,7 +20,7 @@ code {
 }
 
 ::-moz-selection { /* Code for Firefox */
-  color: #3C454C;
+  color: #000000;
   background: #FED107;
 }
 

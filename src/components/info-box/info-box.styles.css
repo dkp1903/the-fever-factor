@@ -7,7 +7,7 @@
     min-width: 0;
     color: #fff;
 
-    background: linear-gradient(135deg, #343D45, rgb(72, 80, 87));
+    background: linear-gradient(135deg, #29ff14, rgb(72, 80, 87));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,7 +41,7 @@
 
 .infobox-data {
     font-size: 3rem;
-    color: #FED107;
+    color: #000080;
     font-weight: bold;
     font-family: 'Lato', sans-serif;
 }

@@ -1,6 +1,6 @@
 nav {
     width: 200px;
-    background-color: #343D45;
+    background-color: #add8e6;
     height: auto;
     padding: 0px 0px 20px;
     position: fixed;
@@ -10,7 +10,7 @@ nav {
 }
 
 .nav-link-container a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     display: block;
     padding: 18px 20px;
