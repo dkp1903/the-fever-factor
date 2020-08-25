@@ -369,9 +369,8 @@ class Content extends React.Component {
             <div className='content-container'>
                 <div className='title-container'>
                     <h1><span className='bold'>The greatest show on Earth</span> - IPL</h1>
-
-                    <img src={image} alt='trophy'/>
                     <h2><span className='bold'>From Jumping Japaak to</span> - Ye das saal aapke naam</h2>
+                    <h2><span className='bold'>Here's some spice</span></h2>
 
                 </div>
                 <div className='infobox-container'>
