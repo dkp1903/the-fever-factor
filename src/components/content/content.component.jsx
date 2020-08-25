@@ -2,7 +2,6 @@ import React from 'react';
 import p from 'papaparse';
 import InfoBox from '../info-box/info-box.component';
 import ChartDisplay from '../chart-display/chart-display.component';
-import image from '../../img/ipl-trophy.jpg';
 
 import './content.styles.css';
 
@@ -362,8 +361,7 @@ class Content extends React.Component {
         let w = window,
         d = document,
         e = d.documentElement,
-        g = d.getElementsByTagName('body')[0],
-        x = w.innerWidth || e.clientWidth || g.clientWidth;
+        g = d.getElementsByTagName('body')[0];
 
         return (
             <div className='content-container'>
