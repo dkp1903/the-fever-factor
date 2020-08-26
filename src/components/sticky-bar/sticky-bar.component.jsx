@@ -9,7 +9,7 @@ class StickyBar extends React.Component {
                     <button aria-label='Navigation Toggle' className='nav-toggle-button'><i className="fas fa-align-left fa-2x"></i></button>
                    
                 </div>
-                {/*<div className='center-bar'></div>*/}
+                
                 <div className='right-bar'>
                     <div id='fullscreenButtonContainer'></div>
                     <div className='login-section-container'>

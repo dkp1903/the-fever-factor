@@ -16,17 +16,12 @@ class Content extends React.Component {
             chartData6: {},
             chartData7: {},
             chartData8: {},
-            rawMatch: {},
-            rawPlayer: {},
-            rawBallByBall: {},
+            
             dataForChart: {},
             rawData: {}
-            /*rawSeason: {},
-            rawTeam: {},
-            rawPlayerMatch: {},*/
-        };
+            
     }
-
+}
     componentDidMount(){
         this.getChartData();
     }
@@ -50,7 +45,7 @@ class Content extends React.Component {
         this.dataForChart1();
         this.dataForChart2();
         this.dataForChart3();
-        this.dataForChart7();
+        this.dataForChart4();
         this.dataForInfoBox1and2();
         this.dataForInfoBox3and4();
         this.dataForInfoBox5and6();
@@ -267,7 +262,7 @@ class Content extends React.Component {
     }
    
    
-    dataForChart7 = () => {
+    dataForChart4 = () => {
         // Season
         let seasons = {};
 
@@ -282,7 +277,7 @@ class Content extends React.Component {
             
 
             this.setState({
-                chartData7: {
+                chartData4: {
                     labels: [...Object.keys(seasons)],
                     datasets: [
                         {
@@ -385,10 +380,9 @@ class Content extends React.Component {
     dataForInfoBox7and8 = () => {
         // Number of Fours
         let mostWins = new Map();
-        let mostLosses = new Map();
+        
         let maxTeam;
-        let w = {};
-        let wins = {};
+        
         if(Object.keys(this.state.rawData).length !== 0){
             this.state.rawData.data.forEach(element => {
                 if(mostWins.get(element.team1) !== undefined) {
@@ -418,7 +412,7 @@ class Content extends React.Component {
 
 
 
-    render() {
+    render(){
         /*==== Calculates current width of browser ====*/
         let w = window,
         d = document,
@@ -428,12 +422,17 @@ class Content extends React.Component {
         return (
             <div className='content-container'>
                 <div className='title-container'>
-                    <h1><span className='bold'>The greatest show on Earth</span> - IPL</h1>
+                    <h1><span className='bold'>It started with  Tu laga dum</span></h1>
                     
                 </div>
                 <div className='title-container'>
-                    <h2><span className='bold'>From Jumping Japaak to</span> - Ye das saal aapke naam</h2>
-                    <h2><span className='bold'>Here's some spice</span></h2>
+                    <h1><span className='bold'>Jumping Japang to Sare Jahaan se Acha</span></h1>
+                </div>
+                <div className='title-container'>
+                    <h1><span className='bold'>And at Das Saal Aapke Naam</span></h1>
+                </div>
+                <div className='title-container'>
+                    <h1><span className='bold'>It's much more than India ka Tyohaar</span></h1>
                 </div>
                 
                 <div className='infobox-container'>
@@ -450,7 +449,7 @@ class Content extends React.Component {
                 <div className='graph-container'>
                     <ChartDisplay 
                         selectChart='pie' 
-                        chartData={this.state.chartData7}   
+                        chartData={this.state.chartData4}   
                         titleText='Yearwise distribution' 
                         selectLabel={true} 
                         selectLabelText='Year' 
