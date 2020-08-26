@@ -57,3 +57,4 @@ The project was undertaken following a complete SD lifecycle process, including 
   - A dropdown for a user to view comparative one-on-one performance.
   - Adding a Dark Theme
 
+![](./img/ff-1.PNG)
