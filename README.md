@@ -9,8 +9,6 @@ Using JS to visualize IPL datasets to present interesting insights to drive atte
 
 The project was undertaken following a complete SD lifecycle process, including stakeholder identification, requirement elicitation, prioritization, development, testing and optimization, deployment.
 
-![Home page](https://i.ibb.co/d0HycDW/Capture2.png)
-
 ## Tech Stack
   - [React](https://reactjs.org/) - JavaScript frontend library
   - [ChartJs](https://www.chartjs.org/) - JavaScript library for charts
@@ -57,4 +55,4 @@ The project was undertaken following a complete SD lifecycle process, including 
   - A dropdown for a user to view comparative one-on-one performance.
   - Adding a Dark Theme
 
-![](./img/ff-1.PNG)
+![](https://i.ibb.co/hgBcydX/ff-1.png)
