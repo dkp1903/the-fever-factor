@@ -53,6 +53,8 @@ class Content extends React.Component {
         this.dataForChart7();
         this.dataForInfoBox1and2();
         this.dataForInfoBox3and4();
+        this.dataForInfoBox5and6();
+        this.dataForInfoBox7and8();
         console.log('This works');  
     }
 
@@ -75,6 +77,8 @@ class Content extends React.Component {
             this.setState({ data2: superovers });
         }
     }
+
+    
     
     dataForChart1 = () => {
         // Bat or Field Decision
@@ -261,7 +265,7 @@ class Content extends React.Component {
             this.forceUpdate();
         }
     }
-
+   
    
     dataForChart7 = () => {
         // Season
@@ -356,6 +360,64 @@ class Content extends React.Component {
         this.forceUpdate();
     }
 
+    dataForInfoBox5and6 = () => {
+        // Number of Fours
+        let totalFirstUmpires = 0;
+        let totalSecondUmpires = 0;
+        let w = {};
+        if(Object.keys(this.state.rawData).length !== 0){
+         this.state.rawData.data.forEach(element => {
+                if(w[element.umpire1] === undefined) {
+                   totalFirstUmpires++;
+                w[element.umpire1] = 1;
+                }
+                if(w[element.umpire2] === undefined) {
+                   totalSecondUmpires++;
+                w[element.umpire2] = 1;
+                }
+                
+            });
+            this.setState({ infoBox5: totalFirstUmpires, infoBox6: totalSecondUmpires });
+        }
+        this.forceUpdate();
+    }
+    
+    dataForInfoBox7and8 = () => {
+        // Number of Fours
+        let mostWins = new Map();
+        let mostLosses = new Map();
+        let maxTeam;
+        let w = {};
+        let wins = {};
+        if(Object.keys(this.state.rawData).length !== 0){
+            this.state.rawData.data.forEach(element => {
+                if(mostWins.get(element.team1) !== undefined) {
+                    let k = mostWins.get(element.team1);
+                   mostWins.set(element.team1, k + 1);
+                } else {
+                    mostWins.set(element.team1, 1);
+                }
+            });
+            let max = 0;
+            let min = 1000;
+            for(let [key, value] of mostWins){
+                    if(value > max){
+                            max = value;
+                            maxTeam = key;
+                    }
+                        
+                    if (value < min)
+                        min = value;
+            }
+            this.setState({ infoBox7: max, infoBox8: min, infoBox9: maxTeam });
+        }
+        this.forceUpdate();
+    }
+
+
+
+
+
     render() {
         /*==== Calculates current width of browser ====*/
         let w = window,
@@ -367,16 +429,23 @@ class Content extends React.Component {
             <div className='content-container'>
                 <div className='title-container'>
                     <h1><span className='bold'>The greatest show on Earth</span> - IPL</h1>
+                    
+                </div>
+                <div className='title-container'>
                     <h2><span className='bold'>From Jumping Japaak to</span> - Ye das saal aapke naam</h2>
                     <h2><span className='bold'>Here's some spice</span></h2>
-
                 </div>
+                
                 <div className='infobox-container'>
                     <InfoBox data={this.state.data1} title='Total Matches' icon={<i className="fas fa-cricket fa-4x"></i>} text='Matches played till now.' />
                     <InfoBox data={this.state.data2} title='Total Ties' icon={<i className="fas fa-cricket fa-4x"></i>} text='Number of ties' />
                     <InfoBox data={this.state.infoBox3} title='Field first wins' icon={<i className="fas fa-cricket fa-4x"></i>} text='Number of wins with field first'  />
                     <InfoBox data={this.state.infoBox4} title='Bat first wins' icon={<i className="fas fa-cricket fa-4x"></i>} text='Number of wins with bat first'  />
-
+                    <InfoBox data={this.state.infoBox5} title='Total 1st umpires' icon={<i className="fas fa-cricket fa-4x"></i>} text='First umpires'  />
+                    <InfoBox data={this.state.infoBox6} title='Total 2nd umpires' icon={<i className="fas fa-cricket fa-4x"></i>} text='Second umpires'  />
+                    <InfoBox data={this.state.infoBox7} title='Most wins' icon={<i className="fas fa-cricket fa-4x"></i>} text='By any team '  />
+                    <InfoBox data={this.state.infoBox8} title='Least wins' icon={<i className="fas fa-cricket fa-4x"></i>} text='By any team'  />
+                    
                 </div>
                 <div className='graph-container'>
                     <ChartDisplay 

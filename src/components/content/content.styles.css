@@ -29,11 +29,13 @@
 
 .title-container {
     padding: 30px 30px 0px 30px;
+    text-align: center;
 }
 
 .title-container h1{
     font-weight: 300;
     color: #000; 
+    font-family: 'Courier New', Courier, monospace;
     margin-bottom: 0px;
     margin-top: 0px;
 }
